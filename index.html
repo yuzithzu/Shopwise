@@ -1,45 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Shopee Link</title>
- <meta property="og:type" content="website">
- <meta property="og:title" content="Shopee Link">
- <meta property="og:description" content="Click here to visit Shopee">
+ <title>Shopee - Online Shopping</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:title" content="Shopee - Online Shopping">
+ <meta property="og:description" content="Shop online sa Shopee!">
  <meta property="og:image" content="https:                                                                   
- <meta property="og:url" content="https://s.shopee.ph/6KqsBV9tl8">
- <meta property="og:site_name" content="Shopee Link">
  <style>
  body {
  font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ }
+
+ header {
+ background-color:      
+ color:      
+ padding: 20px;
  text-align: center;
- background-color: #f2f2f2;
  }
- img {
- width: 200px;
- height: 200px;
- border: 0;
+
+ header nav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
  }
- a {
+
+ header nav ul li {
+ display: inline-block;
+ margin-right: 20px;
+ }
+
+ header nav a {
+ color:      
  text-decoration: none;
- color: #337ab7;
  }
- a:hover {
- color: #23527c;
+
+ .hero {
+ background-image: linear-gradient(to bottom,             
+ background-size: cover;
+ background-position: center;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color:      
+ }
+
+ .hero h1 {
+ font-size: 48px;
+ }
+
+ .hero p {
+ font-size: 24px;
+ }
+
+ .products {
+ padding: 20px;
+ }
+
+ .product-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 20px;
+ }
+
+ .product {
+ background-color:      
+ padding: 20px;
+ border: 1px solid      
+ }
+
+ .product img {
+ width: 100%;
+ height: 150px;
+ object-fit: cover;
+ }
+
+ .product h3 {
+ font-size: 24px;
+ }
+
+ .product p {
+ font-size: 18px;
  }
  </style>
 </head>
 <body>
- <h1>Shopee Link</h1>
- <p>
- <a href="https:                                          
- <img src="https://i.ibb.co/Y4yg3wm6/CEBEDA91-37-F9-48-F6-A483-3-D52-A9876-AD4.png" alt="CEBEDA91-37-F9-48-F6-A483-3-D52-A9876-AD4">
- </a>
- </p>
- <p>
- <a href="https://s.shopee.ph/6KqsBV9tl8" target="_blank">Click here to visit Shopee</a>
- </p>
+ <header>
+ <nav>
+ <ul>
+ <li><a href="#">Home</a></li>
+ <li><a href="                
+ <li><a href="#">About</a></li>
+ </ul>
+ </nav>
+ </header>
+ <main>
+ <section class="hero">
+ <h1>Welcome to Shopee!</h1>
+ <p>Shop online sa Shopee!</p>
+ <button><a href="https:                                  
+ </section>
+ <section class="products">
+ <h2>Featured Products</h2>
+ <div class="product-grid">
+ <div class="product">
+ <img src="product1.jpg" alt="Product 1">
+ <h3>Product 1</h3>
+ <p>PHP 100.00</p>
+ </div>
+ <div class="product">
+ <img src="product2.jpg" alt="Product 2">
+ <h3>Product 2</h3>
+ <p>PHP 200.00</p>
+ </div>
+ <div class="product">
+ <img src="product3.jpg" alt="Product 3">
+ <h3>Product 3</h3>
+ <p>PHP 300.00</p>
+ </div>
+ </div>
+ </section>
+ </main>
  <footer>
- <p>&copy; 2023 Shopee Link</p>
+ <p>&copy; 2023 Shopee</p>
  </footer>
 </body>
 </html>
