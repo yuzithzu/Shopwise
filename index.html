@@ -1,4 +1,3 @@
-<!-- HTML code para sa form at table -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,60 +14,50 @@
 </head>
 <body>
  <h1>Utang Listahan</h1>
- <!-- Table para ipakita ang listahan ng utang -->
- <table id="utang-listahan">
- <tr>
- <th>Name</th>
- <th>Amount ng Utang</th>
- <th>Bayad kada Araw (20%)</th>
- <th>Total Bayad</th>
- </tr>
- </table>
- <!-- Form para mag-input ng bagong utang -->
- <form id="utang-form">
+ <form>
  <label for="name">Name:</label>
  <input type="text" id="name" name="name"><br><br>
  <label for="amount">Amount ng Utang:</label>
  <input type="number" id="amount" name="amount"><br><br>
- <input type="submit" value="Mag-input ng Utang">
+ <label for="bayad">Bayad:</label>
+ <input type="number" id="bayad" name="bayad"><br><br>
+ <input type="button" value="Mag-input ng Bayad" onclick="calculate()">
  </form>
- <!-- Button para clear ang listahan -->
- <button id="clear-button">Clear Listahan</button>
+ <table>
+ <tr>
+ <th>Name</th>
+ <th>Amount ng Utang</th>
+ <th>Bayad</th>
+ <th>Balance</th>
+ </tr>
+ <tr>
+ <td id="name-display"></td>
+ <td id="amount-display"></td>
+ <td id="bayad-display"></td>
+ <td id="balance-display"></td>
+ </tr>
+ </table>
+ <button onclick="clearForm()">Clear Form</button>
  <script>
- // JavaScript code para sa form at table
- let utangListahan = [];
- let table = document.getElementById("utang-listahan");
- let form = document.getElementById("utang-form");
- let clearButton = document.getElementById("clear-button");
- 
- // Function para mag-input ng bagong utang
- form.addEventListener("submit", (e) => {
- e.preventDefault();
- let name = document.getElementById("name").value;
- let amount = parseFloat(document.getElementById("amount").value);
- let bayad = amount * 0.2;
- let total = amount + bayad;
- utangListahan.push({ name, amount, bayad, total });
- let row = table.insertRow();
- let nameCell = row.insertCell();
- let amountCell = row.insertCell();
- let bayadCell = row.insertCell();
- let totalCell = row.insertCell();
- nameCell.innerHTML = name;
- amountCell.innerHTML = amount;
- bayadCell.innerHTML = bayad;
- totalCell.innerHTML = total;
+ function calculate() {
+ var name = document.getElementById("name").value;
+ var amount = parseFloat(document.getElementById("amount").value);
+ var bayad = parseFloat(document.getElementById("bayad").value);
+ var balance = amount - bayad;
+ document.getElementById("name-display").innerHTML = name;
+ document.getElementById("amount-display").innerHTML = amount;
+ document.getElementById("bayad-display").innerHTML = bayad;
+ document.getElementById("balance-display").innerHTML = balance;
+ }
+ function clearForm() {
  document.getElementById("name").value = "";
  document.getElementById("amount").value = "";
- });
- 
- // Function para clear ang listahan
- clearButton.addEventListener("click", () => {
- utangListahan = [];
- while (table.rows.length > 1) {
- table.deleteRow(1);
+ document.getElementById("bayad").value = "";
+ document.getElementById("name-display").innerHTML = "";
+ document.getElementById("amount-display").innerHTML = "";
+ document.getElementById("bayad-display").innerHTML = "";
+ document.getElementById("balance-display").innerHTML = "";
  }
- });
  </script>
 </body>
 </html>
