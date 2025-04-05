@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta property="og:title" content="Shopwise">
- <meta property="og:description" content="Shopwise - ang iyong online shopping partner">
- <meta property="og:image" content="https:                                                                   
- <meta property="og:url" content="https://yuzithzu.github.io/Shopwise/">
- <title>Shopwise</title>
+ <title>Utang Listahan</title>
+ <style>
+ table {
+ border-collapse: collapse;
+ }
+ th, td {
+ border: 1px solid black;
+ padding: 10px;
+ }
+ </style>
 </head>
 <body>
- <h1>Shopwise</h1>
- <p>
- <a href="https:                          
- <img src="https://i.ibb.co/Y4yg3wm6/CEBEDA91-37-F9-48-F6-A483-3-D52-A9876-AD4.png" alt="CEBEDA91-37-F9-48-F6-A483-3-D52-A9876-AD4" border="0">
- </a>
- </p>
+ <h1>Utang Listahan</h1>
+ <table id="utang-listahan">
+ <tr>
+ <th>Name</th>
+ <th>Amount ng Utang</th>
+ <th>Bayad kada Araw (20%)</th>
+ <th>Total Bayad</th>
+ </tr>
+ </table>
+ <form id="utang-form">
+ <label for="name">Name:</label>
+ <input type="text" id="name" name="name"><br><br>
+ <label for="amount">Amount ng Utang:</label>
+ <input type="number" id="amount" name="amount"><br><br>
+ <input type="submit" value="Mag-input ng Utang">
+ </form>
+ <button id="clear-button">Clear Listahan</button>
+ <script>
+ let utangListahan = [];
+ let table = document.getElementById("utang-listahan");
+ let form = document.getElementById("utang-form");
+ let clearButton = document.getElementById("clear-button");
+ form.addEventListener("submit", (e) => {
+ e.preventDefault();
+ let name = document.getElementById("name").value;
+ let amount = parseFloat(document.getElementById("amount").value);
+ let bayad = amount * 0.2;
+ let total = amount + bayad;
+ utangListahan.push({ name, amount, bayad, total });
+ let row = table.insertRow();
+ let nameCell = row.insertCell();
+ let amountCell = row.insertCell();
+ let bayadCell = row.insertCell();
+ let totalCell = row.insertCell();
+ nameCell.innerHTML = name;
+ amountCell.innerHTML = amount;
+ bayadCell.innerHTML = bayad;
+ totalCell.innerHTML = total;
+ document.getElementById("name").value = "";
+ document.getElementById("amount").value = "";
+ });
+ clearButton.addEventListener("click", () => {
+ utangListahan = [];
+ while (table.rows.length > 1) {
+ table.deleteRow(1);
+ }
+ });
+ </script>
 </body>
 </html>
