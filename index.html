@@ -1,3 +1,4 @@
+<!-- HTML code para sa form at table -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,7 @@
 </head>
 <body>
  <h1>Utang Listahan</h1>
+ <!-- Table para ipakita ang listahan ng utang -->
  <table id="utang-listahan">
  <tr>
  <th>Name</th>
@@ -22,6 +24,7 @@
  <th>Total Bayad</th>
  </tr>
  </table>
+ <!-- Form para mag-input ng bagong utang -->
  <form id="utang-form">
  <label for="name">Name:</label>
  <input type="text" id="name" name="name"><br><br>
@@ -29,12 +32,16 @@
  <input type="number" id="amount" name="amount"><br><br>
  <input type="submit" value="Mag-input ng Utang">
  </form>
+ <!-- Button para clear ang listahan -->
  <button id="clear-button">Clear Listahan</button>
  <script>
+ // JavaScript code para sa form at table
  let utangListahan = [];
  let table = document.getElementById("utang-listahan");
  let form = document.getElementById("utang-form");
  let clearButton = document.getElementById("clear-button");
+ 
+ // Function para mag-input ng bagong utang
  form.addEventListener("submit", (e) => {
  e.preventDefault();
  let name = document.getElementById("name").value;
@@ -54,6 +61,8 @@
  document.getElementById("name").value = "";
  document.getElementById("amount").value = "";
  });
+ 
+ // Function para clear ang listahan
  clearButton.addEventListener("click", () => {
  utangListahan = [];
  while (table.rows.length > 1) {
